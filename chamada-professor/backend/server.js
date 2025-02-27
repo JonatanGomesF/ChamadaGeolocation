@@ -1,4 +1,4 @@
-// Backend (Node.js + Express)
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -11,7 +11,7 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'delta@1919',
+  password: process.env.DB_PASSWORD,
   database: 'chamada_db'
 });
 
